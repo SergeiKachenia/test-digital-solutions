@@ -1,0 +1,24 @@
+.PostCard {
+    margin: 0;
+    padding: 0 5px 0 35px;
+    box-sizing: border-box;
+}
+
+.PostCard__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    text-transform: capitalize;
+    color: #000000;
+    margin: 0;
+    padding: 15px 5px 10px 0;
+}
+
+.PostCard__body {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 142%;
+    color: rgba(0, 0, 0, 0.41);
+    margin: 0;
+    padding: 0;
+}

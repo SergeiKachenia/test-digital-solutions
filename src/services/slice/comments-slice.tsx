@@ -2,52 +2,52 @@ import { createSlice} from "@reduxjs/toolkit";
 import {checkResponse} from "../utils/utils";
 
 export const initialState = {
-  users: [],
+  comments: [],
   loading: false,
   error: null,
 };
 
 
-const usersSlice = createSlice({
-  name: "users",
+const commentsSlice = createSlice({
+  name: "comments",
   initialState,
   reducers: {
-    getUsers: (state) => {
+    getComments: (state) => {
       state.loading = true;
     },
-    getUsersSuccess: (state, {payload}) => {
+    getCommentsSuccess: (state, {payload}) => {
       state.loading = false;
       state.error = null;
-      state.users = payload;
+      state.comments = payload;
     },
-    getUsersFailed: (state, {payload}) => {
+    getCommentsFailed: (state, {payload}) => {
       state.loading = false;
       state.error = payload
     }
   }
 }
 )
-export const {getUsers, getUsersSuccess, getUsersFailed} = usersSlice.actions
+export const {getComments, getCommentsSuccess, getCommentsFailed} = commentsSlice.actions
 
-export const fetchUsers = () => {
+export const fetchComments = () => {
   return async (dispatch) => {
-    dispatch(getUsers());
+    dispatch(getComments());
     try {
       const res = await fetch(
-        'https://jsonplaceholder.typicode.com/users'
+        'https://jsonplaceholder.typicode.com/comments/'
       );
       checkResponse(res);
       const actualData = await res.json();
-      dispatch(getUsersSuccess(actualData));
+      dispatch(getCommentsSuccess(actualData));
     } catch (error: unknown) {
       if (typeof error === "string") console.log(error);
       else if (error instanceof Error) {
-      dispatch(getUsersFailed(error.message));
+      dispatch(getCommentsFailed(error.message));
       }
     }
   };
 }
 
 
-export const usersSelector = (state) => state.users;
-export const usersReducer = usersSlice.reducer;
+export const commentsSelector = (state) => state.comments;
+export const commentsReducer = commentsSlice.reducer;
