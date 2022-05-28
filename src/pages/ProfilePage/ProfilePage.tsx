@@ -1,35 +1,34 @@
 import { useParams } from "react-router-dom";
 import { postsSelector, fetchPosts } from "../../services/slice/posts-slice";
 import { usersSelector } from "../../services/slice/users-slice";
-import { useSelector, useDispatch } from "react-redux";
 import { PostCard } from "../../components/PostCard/PostCard";
 import styles from "./ProfilePage.module.css";
-import {UserProfile} from '../../components/UserProfile/UserProfile';
+import { UserProfile } from "../../components/UserProfile/UserProfile";
 import { Link, useLocation } from "react-router-dom";
-import React, {useEffect} from "react";
+import React, { useEffect, FC } from "react";
+import { useAppSelector, useAppDispatch } from "../../index";
+import { TLocationState } from "../../services/types/data";
 
-export const ProfilePage = () => {
-  const { posts } = useSelector(postsSelector);
-  const { users } = useSelector(usersSelector);
+export const ProfilePage: FC = () => {
+  const { posts } = useAppSelector(postsSelector);
+  const { users } = useAppSelector(usersSelector);
 
-  const location = useLocation();
-  // @ts-ignore
-  const { userId } = useParams();
+  const location = useLocation<TLocationState>();
+  const { userId } = useParams<{ userId: string }>();
   const currentUser = users.find((item) => {
     return item.id == userId;
   });
   const usersPosts = posts.filter((item) => {
     return item.userId == userId;
   });
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   useEffect(() => {
-          //@ts-ignore
     dispatch(fetchPosts());
-  }, [location])
+  }, [location]);
 
   return (
     <>
-      {usersPosts &&  usersPosts.length > 0 && (
+      {usersPosts && usersPosts.length > 0 && currentUser && (
         <main>
           <section className={styles.profilePage}>
             <UserProfile></UserProfile>
@@ -37,24 +36,28 @@ export const ProfilePage = () => {
           <section className={styles.profilePage__posts}>
             <div className={styles.profilePage__postsContent}>
               <div className={styles.profilePage__headContent}>
-              <h2 className={styles.profilePage__postsHeading}>Посты</h2>
-              <Link
-
-to={{
-  pathname: `/user/${currentUser.id}/posts`,
-  state: { background: location }
-}}
-className={styles.profilePage__button}
-href="#"
->Смотреть все посты</Link>
+                <h2 className={styles.profilePage__postsHeading}>Посты</h2>
+                <Link
+                  to={{
+                    pathname: `/user/${currentUser.id}/posts`,
+                    state: { background: location },
+                  }}
+                  className={styles.profilePage__button}
+                  href="#"
+                >
+                  Смотреть все посты
+                </Link>
               </div>
-            <ul className={styles.profilePage__postsList}>
-              {usersPosts.slice(0, 3).map((postItem) => (
-                <li className={styles.profilePage__postsItem} key={postItem.id}>
-                  <PostCard postItem={postItem}></PostCard>
-                </li>
-              ))}
-            </ul>
+              <ul className={styles.profilePage__postsList}>
+                {usersPosts.slice(0, 3).map((postItem) => (
+                  <li
+                    className={styles.profilePage__postsItem}
+                    key={postItem.id}
+                  >
+                    <PostCard postItem={postItem}></PostCard>
+                  </li>
+                ))}
+              </ul>
             </div>
           </section>
         </main>

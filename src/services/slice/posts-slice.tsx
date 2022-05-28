@@ -1,10 +1,17 @@
-import { createSlice} from "@reduxjs/toolkit";
+import { createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {checkResponse} from "../utils/utils";
+import { TPost, AppThunk } from "../types/data";
+import {RootState} from "../../index";
+interface IPostsState {
+  posts: TPost[],
+  loading: boolean,
+  error: string
+}
 
-export const initialState = {
+export const initialState: IPostsState = {
   posts: [],
   loading: false,
-  error: null,
+  error: '',
 };
 
 
@@ -15,21 +22,21 @@ const postsSlice = createSlice({
     getPosts: (state) => {
       state.loading = true;
     },
-    getPostsSuccess: (state, {payload}) => {
+    getPostsSuccess: (state, {payload}: PayloadAction<any>) => {
       state.loading = false;
-      state.error = null;
+      state.error = '';
       state.posts = payload;
     },
-    getPostsFailed: (state, {payload}) => {
+    getPostsFailed: (state, {payload}: PayloadAction<any>) => {
       state.loading = false;
-      state.error = payload
+      state.error = payload;
     }
   }
 }
 )
 export const {getPosts, getPostsSuccess, getPostsFailed} = postsSlice.actions
 
-export const fetchPosts = () => {
+export const fetchPosts = (): AppThunk => {
   return async (dispatch) => {
     dispatch(getPosts());
     try {
@@ -49,5 +56,5 @@ export const fetchPosts = () => {
 }
 
 
-export const postsSelector = (state) => state.posts;
+export const postsSelector = (state: RootState) => state.posts;
 export const postsReducer = postsSlice.reducer;

@@ -38,13 +38,10 @@
 }
 
 .profilePage__postsItem {
-    display: flex;
     border: 1px solid #000000;
     box-sizing: border-box;
-    justify-content: flex-start;
-    align-items: flex-start;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }

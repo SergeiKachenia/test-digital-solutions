@@ -1,0 +1,27 @@
+.CommentItem__title {
+  text-align: start;
+      font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    text-transform: capitalize;
+    color: #000000;
+    margin: 0;
+    padding: 0 25px 10px 25px;
+}
+.CommentItem__body {
+  text-align: start;
+  font-weight: 400;
+    font-size: 13px;
+    line-height: 142%;
+    margin: 0;
+    padding: 0 25px 15px 25px;
+    color: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.5)
+}
+
+.CommentItem__email {
+      color: #000000;
+      opacity: 0.5;
+          padding: 15px 25px 15px 25px;
+          margin: 0;
+}

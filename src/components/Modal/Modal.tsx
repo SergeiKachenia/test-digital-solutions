@@ -4,7 +4,7 @@ import ModalOverlay from "../ModalOverlay/ModalOverlay";
 import styles from "./Modal.module.css";
 
 type TModalProps = {
-  readonly onClose: (a: boolean) => void;
+  readonly onClose: (a?: boolean) => void;
   readonly title?: string;
   readonly children: React.ReactNode;
 };
@@ -15,7 +15,7 @@ export const Modal: FC<TModalProps> = (props) => {
   useEffect(() => {
     const closeByEsc = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        props.onClose(true);
+        props.onClose();
       }
     };
     window.addEventListener("keydown", closeByEsc);
@@ -30,18 +30,14 @@ export const Modal: FC<TModalProps> = (props) => {
       <ModalOverlay onClose={props.onClose} />
       <div className={`${styles.popup} `}>
         <div>
-          <div
-            className={`${styles.popup__header}`}
-          >
+          <div className={`${styles.popup__header}`}>
             <span>{props.title}</span>
             <span
               className={styles.popup__closeicon}
               onClick={() => {
-                props.onClose(false);
+                props.onClose();
               }}
-            >
-              <CloseIcon type="primary" />
-            </span>
+            ></span>
           </div>
           <div className={styles.popup__content}>{props.children}</div>
         </div>

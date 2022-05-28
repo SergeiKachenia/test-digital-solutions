@@ -1,10 +1,17 @@
-import { createSlice} from "@reduxjs/toolkit";
+import { createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {checkResponse} from "../utils/utils";
+import { TUser, AppThunk } from "../types/data";
+import {RootState} from "../../index";
+interface IUsersState {
+  users: TUser[],
+  loading: boolean,
+  error: string
+}
 
-export const initialState = {
+export const initialState: IUsersState = {
   users: [],
   loading: false,
-  error: null,
+  error: ''
 };
 
 
@@ -15,21 +22,21 @@ const usersSlice = createSlice({
     getUsers: (state) => {
       state.loading = true;
     },
-    getUsersSuccess: (state, {payload}) => {
+    getUsersSuccess: (state, {payload}: PayloadAction<any>) => {
       state.loading = false;
-      state.error = null;
+      state.error = '';
       state.users = payload;
     },
-    getUsersFailed: (state, {payload}) => {
+    getUsersFailed: (state, {payload}: PayloadAction<any>) => {
       state.loading = false;
-      state.error = payload
+      state.error = payload;
     }
   }
 }
 )
 export const {getUsers, getUsersSuccess, getUsersFailed} = usersSlice.actions
 
-export const fetchUsers = () => {
+export const fetchUsers = (): AppThunk => {
   return async (dispatch) => {
     dispatch(getUsers());
     try {
@@ -49,5 +56,5 @@ export const fetchUsers = () => {
 }
 
 
-export const usersSelector = (state) => state.users;
+export const usersSelector = (state: RootState) => state.users;
 export const usersReducer = usersSlice.reducer;
