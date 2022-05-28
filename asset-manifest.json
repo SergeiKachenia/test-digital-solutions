@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/test-digital-solutions/static/css/main.d1623cb4.css",
-    "main.js": "/test-digital-solutions/static/js/main.2e11c56d.js",
-    "static/media/space.jpg": "/test-digital-solutions/static/media/space.fe06462a90b2741961e6.jpg",
-    "static/media/OpenSans-ExtraBold.ttf": "/test-digital-solutions/static/media/OpenSans-ExtraBold.f3f77b66062bde625834.ttf",
-    "static/media/OpenSans-Medium.ttf": "/test-digital-solutions/static/media/OpenSans-Medium.65529e6c75fe516f596a.ttf",
-    "static/media/OpenSans-Regular.ttf": "/test-digital-solutions/static/media/OpenSans-Regular.57cd57a648021fa1c396.ttf",
-    "static/media/OpenSans-Bold.ttf": "/test-digital-solutions/static/media/OpenSans-Bold.a0fe34bea92d4e1a84d6.ttf",
-    "static/media/OpenSans-SemiBold.ttf": "/test-digital-solutions/static/media/OpenSans-SemiBold.2b370b191e5562dadc78.ttf",
-    "index.html": "/test-digital-solutions/index.html",
-    "static/media/close-svgrepo-com.svg": "/test-digital-solutions/static/media/close-svgrepo-com.9f829dbea39731db8114.svg",
-    "main.d1623cb4.css.map": "/test-digital-solutions/static/css/main.d1623cb4.css.map",
-    "main.2e11c56d.js.map": "/test-digital-solutions/static/js/main.2e11c56d.js.map"
+    "main.css": "./static/css/main.aa76946d.css",
+    "main.js": "./static/js/main.2e11c56d.js",
+    "static/media/space.jpg": "./static/media/space.fe06462a90b2741961e6.jpg",
+    "static/media/OpenSans-ExtraBold.ttf": "./static/media/OpenSans-ExtraBold.f3f77b66062bde625834.ttf",
+    "static/media/OpenSans-Medium.ttf": "./static/media/OpenSans-Medium.65529e6c75fe516f596a.ttf",
+    "static/media/OpenSans-Regular.ttf": "./static/media/OpenSans-Regular.57cd57a648021fa1c396.ttf",
+    "static/media/OpenSans-Bold.ttf": "./static/media/OpenSans-Bold.a0fe34bea92d4e1a84d6.ttf",
+    "static/media/OpenSans-SemiBold.ttf": "./static/media/OpenSans-SemiBold.2b370b191e5562dadc78.ttf",
+    "index.html": "./index.html",
+    "static/media/close-svgrepo-com.svg": "./static/media/close-svgrepo-com.95e3d87723c45486ab98.svg",
+    "main.aa76946d.css.map": "./static/css/main.aa76946d.css.map",
+    "main.2e11c56d.js.map": "./static/js/main.2e11c56d.js.map"
   },
   "entrypoints": [
-    "static/css/main.d1623cb4.css",
+    "static/css/main.aa76946d.css",
     "static/js/main.2e11c56d.js"
   ]
 }
