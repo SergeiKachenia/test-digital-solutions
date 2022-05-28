@@ -25,6 +25,7 @@ company[name,bs]
 1. React
 2. TypeScript
 3. Redux + Redux Toolkit + Redux Thunk
+4. CSS
 
 ## Available Scripts:
 In the project directory, you can run:
