@@ -28,7 +28,7 @@ company[name,bs]
 4. REST API
 5. CSS/HTML
 
-### Тестовое задание доступно на GH-Pages по [этой](https://sergeikachenia.github.io/) ссылке.
+### Тестовое задание доступно на GH-Pages по [этой](https://sergeikachenia.github.io/test-digital-solutions/) ссылке.
 
 ## Available Scripts:
 In the project directory, you can run:
