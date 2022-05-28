@@ -1,0 +1,12 @@
+.App__loading {
+  display: inline-block;
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: 40%;
+  left: 45%;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+

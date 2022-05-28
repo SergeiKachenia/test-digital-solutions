@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.link {
+  color: #4C4CFF;
+  text-decoration: none;
+  margin-top: 10vh;
+    font-weight: 500;
+  font-size: 24px;
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 32px;
+  text-align: center;
+  color: #000;
+}
