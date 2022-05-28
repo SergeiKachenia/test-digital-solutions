@@ -21,6 +21,10 @@ company[name,bs]
 
 Требования к внешнему виду: дизайн из Figma https://www.figma.com/file/IpjzEBgEd5Tk3ry5g347Ux/Untitled
 
+### Стек: 
+1. React
+2. TypeScript
+3. Redux + Redux Toolkit + Redux Thunk
 
 ## Available Scripts:
 In the project directory, you can run:
