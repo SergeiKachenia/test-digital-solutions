@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7b09b270.css",
+    "main.js": "/static/js/main.2e11c56d.js",
+    "static/media/space.jpg": "/static/media/space.fe06462a90b2741961e6.jpg",
+    "static/media/OpenSans-ExtraBold.ttf": "/static/media/OpenSans-ExtraBold.f3f77b66062bde625834.ttf",
+    "static/media/OpenSans-Medium.ttf": "/static/media/OpenSans-Medium.65529e6c75fe516f596a.ttf",
+    "static/media/OpenSans-Regular.ttf": "/static/media/OpenSans-Regular.57cd57a648021fa1c396.ttf",
+    "static/media/OpenSans-Bold.ttf": "/static/media/OpenSans-Bold.a0fe34bea92d4e1a84d6.ttf",
+    "static/media/OpenSans-SemiBold.ttf": "/static/media/OpenSans-SemiBold.2b370b191e5562dadc78.ttf",
+    "index.html": "/index.html",
+    "static/media/close-svgrepo-com.svg": "/static/media/close-svgrepo-com.9f829dbea39731db8114.svg",
+    "main.7b09b270.css.map": "/static/css/main.7b09b270.css.map",
+    "main.2e11c56d.js.map": "/static/js/main.2e11c56d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b09b270.css",
+    "static/js/main.2e11c56d.js"
+  ]
+}
